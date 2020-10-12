@@ -1,0 +1,25 @@
+@url = http://localhost:3000/api
+@type = application/json
+@tk = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmODRiMzU5MjM3ZGE5MzhjYzMxOWM1ZiIsImlhdCI6MTYwMjUzODQwOCwiZXhwIjoxNjAyNjI0ODA4fQ.b_PyFqpLDAGe1Kta5RHu5e0i0Bb3GC0FFLmPlgXj8jc
+
+POST {{url}}/auth/new
+Content-Type: {{type}}
+
+{
+    "nom":"Fernando",
+    "cor":"test@gmail.com",
+    "pwd":"123456"
+}
+
+### LOGIN
+POST {{url}}/auth/login
+Content-Type: {{type}}
+
+{
+    "cor":"test@gmail.com",
+    "pwd":"123456"
+}
+
+### Renew Token
+GET {{url}}/auth/renew
+x-tk: {{tk}}
