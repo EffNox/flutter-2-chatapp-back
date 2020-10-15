@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose')
 
 const UsuarioSc = Schema({
     nom: { type: String, require: true },
-    cor: { type: String, unique: true, require: true },
+    cor: { type: String, unique: true, require: true, trim: true },
     pwd: { type: String, require: true },
     online: { type: Boolean, default: false }
 }, { versionKey: !1 })

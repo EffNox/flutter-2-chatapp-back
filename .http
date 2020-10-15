@@ -1,6 +1,6 @@
 @url = http://localhost:3000/api
 @type = application/json
-@tk = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmODRiMzU5MjM3ZGE5MzhjYzMxOWM1ZiIsImlhdCI6MTYwMjUzODQwOCwiZXhwIjoxNjAyNjI0ODA4fQ.b_PyFqpLDAGe1Kta5RHu5e0i0Bb3GC0FFLmPlgXj8jc
+@tk = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmODYwMjVhZWQzZTMwMDc2MGZkZmQ1YSIsImlhdCI6MTYwMjcyNDY1OSwiZXhwIjoxNjAyODExMDU5fQ.cZl2XfavQUws3ZAXsxDj60unYPP3mhy8uJkU5n13F1w
 
 POST {{url}}/auth/new
 Content-Type: {{type}}
@@ -16,10 +16,18 @@ POST {{url}}/auth/login
 Content-Type: {{type}}
 
 {
-    "cor":"test@gmail.com",
+    "cor":"test2@gmail.com",
     "pwd":"123456"
 }
 
 ### Renew Token
 GET {{url}}/auth/renew
+x-tk: {{tk}}
+
+### Usuario
+GET {{url}}/usuario?from=0
+x-tk: {{tk}}
+
+### Mensaje
+GET {{url}}/mensaje/5f86024bed3e300760fdfd59
 x-tk: {{tk}}

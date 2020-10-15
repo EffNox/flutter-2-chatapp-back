@@ -10,6 +10,8 @@ app.use(cors());
 app.use(express.json())
 app.use(express.static(path.resolve(__dirname, 'public')))
 app.use('/api/auth', require('./routes/auth'))
+app.use('/api/usuario', require('./routes/usuario'))
+app.use('/api/mensaje', require('./routes/mensaje'))
 
 const server = require('http').createServer(app);
 module.exports.io = require('socket.io')(server);
